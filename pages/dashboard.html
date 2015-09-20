@@ -1,0 +1,44 @@
+      <div class="moneytrackerwrapper">
+        <div class="moneytabs">
+          <button ng-repeat="tab in tabs" ng-click="changeTab(tab)">{{tab.$id}}</button>
+          <input type="text" ng-model="newTabName" ng-show="addingTab" placeholder="Tab Name?" required></input>
+          <button type="submit" ng-click="addTab()">+</button>
+        </div>
+        <button ng-click="removeTab()" class="deletetab">Delete Tab</button>
+        <h1>Money Tracking</h1>
+        <input id="searchfilter" type="text" placeholder="Search" ng-model="search">
+        <ul>
+          <li class="nohovereffects">
+            <span>
+              <span>Date</span>
+              <span>Transaction</span>
+              <span>Cost</span>
+            </span>
+          </li>
+          <li ng-hide="entries.length">
+            <span>
+              <span>&nbsp;</span>
+              <span>Add something to your tracker!</span>
+            </span>
+          </li>
+          <li id="entrydisplay" ng-repeat="entry in entries | filter:search | descending:this" >
+            <span>
+              <span>{{entry.date}}</span>
+              <span>{{entry.text}}</span>
+              <span data-price="{{entry.value}}">${{entry.value}}</span>
+              <button ng-click="removeEntry(entry)">X</button>
+            </span>
+          </li>
+          <li class="nohovereffects listresults">
+            <span>
+              <span>Total Items: {{(entries | filter:search).length}}</span>
+              <span>Total Cost: ${{sum}}</span>
+            </span>
+          </li>
+        </ul>
+        <form class="inputpurchase" ng-submit="addEntry()">
+          <input type="text" ng-model="entryName" placeholder="Purchase Name" required>
+          <input type="text" ng-model="entryValue" placeholder="$" required pattern="(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+          <input type="submit" value="Add">
+        </form>
+      </div>

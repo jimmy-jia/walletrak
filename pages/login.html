@@ -1,0 +1,17 @@
+<div class="loginpage">
+  <h1>Login to <span class="logofont">walle<span class="greenify">trak</span></span></h1>
+  <form id="auth">
+    <fieldset ng-hide="user">
+      <input type="email" placeholder="email" ng-model="email" required/>
+      <input type="password" placeholder="password" ng-model="password" required/>
+      <span><button type="submit" ng-click="signIn()">Sign In</button>
+      <button type="submit" ng-click="signUp()">Sign Up</button></span>
+    </fieldset>
+    <span ng-show="user">
+      <p>Thanks for signing up!</p>
+      <a href="/dashboard" class="gotodashboard">Go to dashboard</a><br>
+      <button type="submit" ng-click="logout()">Log Out</button>
+    </span>
+    
+  </form>
+</div>  

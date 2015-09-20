@@ -1,0 +1,288 @@
+* {
+  box-sizing: border-box; }
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%; }
+
+p {
+  font-family: "Roboto", sans-serif;
+  padding: 0;
+  margin: 0; }
+
+a {
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  color: #51b964;
+  transition: color 0.4s; }
+  a:hover {
+    color: white; }
+
+li, ul {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+
+.greenify {
+  color: #51b964; }
+
+.logofont {
+  font-family: "Poiret One", sans-serif; }
+
+.nohovereffects {
+  pointer-events: none; }
+
+header {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  width: 100%;
+  padding: 10px;
+  font-size: 1.5em; }
+  header > a:first-child {
+    font-family: "Poiret One", sans-serif;
+    color: white;
+    font-weight: bold; }
+  header nav {
+    float: right;
+    margin-right: 10px; }
+    header nav a {
+      margin-left: 10px;
+      font-family: "Poiret One", sans-serif;
+      font-weight: bold; }
+
+.headerbackcolor {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  height: 50px;
+  background-color: #373837; }
+
+.banner {
+  margin-top: -50px;
+  padding-top: 100px;
+  padding-bottom: 65px;
+  text-align: center;
+  background-color: #777;
+  background-image: url(writing.jpg);
+  background-size: cover;
+  color: white;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 0 5px #2c3e50; }
+  .banner h1 {
+    font-size: 4em;
+    font-family: "Poiret One", sans-serif;
+    font-weight: 400;
+    margin-bottom: 0; }
+  .banner h3 {
+    font-size: 1.5em;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100; }
+
+.threecolumn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.6;
+  background-color: #f1f1f1;
+  padding: 20px; }
+  .threecolumn div {
+    max-width: 100%;
+    width: 280px;
+    margin: 10px;
+    padding: 20px; }
+  .threecolumn h3 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    text-align: center;
+    margin: 0;
+    color: #212321;
+    margin: 10px 0; }
+  .threecolumn p {
+    color: #555;
+    font-family: "Lato", sans-serif; }
+  .threecolumn img {
+    width: 80px; }
+
+.appdescription {
+  padding-top: 50px;
+  padding-bottom: 60px; }
+  .appdescription h1 {
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    padding-bottom: 40px;
+    font-weight: 300;
+    color: #212321;
+    font-size: 2em; }
+    .appdescription h1 > span {
+      font-size: 1.25em; }
+  .appdescription h1, .appdescription p {
+    width: 600px;
+    max-width: 100%;
+    margin: 0 auto; }
+  .appdescription p {
+    color: #555;
+    line-height: 1.6;
+    font-family: "Lato", sans-serif;
+    text-align: center; }
+
+#main {
+  padding-top: 50px; }
+
+.loginpage {
+  width: 500px;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 80px;
+  background-color: #f1f1f1;
+  padding: 40px;
+  box-shadow: 0 0 8px 3px #d5d5d5;
+  text-align: center; }
+  .loginpage fieldset {
+    border: 0; }
+  .loginpage input {
+    width: 100%; }
+  .loginpage h1 {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    text-transform: lowercase;
+    font-weight: 100;
+    text-align: center;
+    padding: 15px 0; }
+  .loginpage button {
+    margin-top: 20px;
+    height: 50px; }
+
+input {
+  padding: 15px 10px;
+  border: 0;
+  border-bottom: 2px solid #51b964;
+  background-color: transparent;
+  transition: all 0.4s;
+  font-family: "Montserrat", sans-serif; }
+  input:focus, input:active {
+    outline: 0;
+    background-color: white; }
+
+input[type="submit"], button {
+  background-color: #51b964;
+  border: 0;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  width: 100px;
+  transition: all 0.4s; }
+  input[type="submit"]:hover, button:hover {
+    background-color: #2f753c;
+    cursor: pointer; }
+  input[type="submit"]:active, input[type="submit"]:focus, button:active, button:focus {
+    outline: 0; }
+
+.loginmessage {
+  font-family: "Montserrat", sans-serif; }
+
+.gotodashboard {
+  margin-top: 15px;
+  font-size: 1.4em; }
+  .gotodashboard:hover {
+    color: #080b0e; }
+
+.moneytabs button {
+  width: auto;
+  height: 50px;
+  background-color: #777;
+  margin-left: 4px;
+  min-width: 50px; }
+  .moneytabs button:hover {
+    background-color: #444444; }
+  .moneytabs button:last-of-type {
+    width: 50px;
+    background-color: #51b964;
+    margin-left: 0; }
+    .moneytabs button:last-of-type:hover {
+      background-color: #2f753c; }
+
+.deletetab {
+  background-color: #dc2311;
+  position: absolute;
+  height: 50px;
+  right: 20px;
+  top: 0; }
+  .deletetab:hover {
+    background-color: #ad1b0d; }
+
+.moneytrackerwrapper {
+  position: relative;
+  border-radius: 5px;
+  padding: 0 15px 15px 15px;
+  background-color: #f1f1f1;
+  max-width: 100%;
+  width: 900px;
+  margin: 0 auto;
+  margin-bottom: 60px; }
+  .moneytrackerwrapper h1 {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e1e1e1;
+    color: #373837; }
+  .moneytrackerwrapper ul {
+    padding-bottom: 20px; }
+    .moneytrackerwrapper ul .listresults span span:nth-child(2) {
+      position: absolute;
+      right: 0;
+      width: 300px;
+      min-width: 1px; }
+  .moneytrackerwrapper li span {
+    display: flex;
+    font-family: "Montserrat", sans-serif;
+    color: #2c3e50;
+    position: relative; }
+    .moneytrackerwrapper li span > span:first-child {
+      width: 130px;
+      min-width: 130px; }
+    .moneytrackerwrapper li span > span:nth-child(2) {
+      width: 500px;
+      min-width: 500px; }
+    .moneytrackerwrapper li span > span:nth-child(3) {
+      width: 200px;
+      min-width: 200px; }
+  .moneytrackerwrapper li {
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid #e1e1e1;
+    border-left: 0px solid #51b964;
+    padding: 15px 15px;
+    position: relative;
+    transition: all 0.4s; }
+    .moneytrackerwrapper li:hover {
+      background-color: #e1e1e1;
+      border-top: 1px solid #bbb;
+      border-bottom: 1px solid #bbb;
+      padding-left: 20px;
+      border-left: 5px solid #51b964; }
+    .moneytrackerwrapper li button {
+      width: auto;
+      position: absolute;
+      right: 0;
+      background-color: transparent;
+      border: 0;
+      transition: background-color 0.4s;
+      color: #a00; }
+      .moneytrackerwrapper li button:hover {
+        cursor: pointer;
+        color: #f00; }
+
+#searchfilter {
+  margin-left: 15px; }
+
+/*# sourceMappingURL=stylesheet.css.map */
