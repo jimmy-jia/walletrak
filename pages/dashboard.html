@@ -1,12 +1,12 @@
       <div class="moneytrackerwrapper">
         <div class="moneytabs">
-          <button ng-repeat="tab in tabs" ng-click="changeTab(tab)">{{tab.$id}}</button>
+          <button ng-repeat="tab in tabs" ng-click="changeTab(tab)">{{tab.name}}</button>
           <input type="text" ng-model="newTabName" ng-show="addingTab" placeholder="Tab Name?" required></input>
           <button type="submit" ng-click="addTab()">+</button>
         </div>
         <button ng-click="removeTab()" class="deletetab">Delete Tab</button>
-        <h1>Money Tracking</h1>
-        <input id="searchfilter" type="text" placeholder="Search" ng-model="search">
+        <input class="tabtitle" type="text" ng-model="tabObject.name" placeholder="Tab Name"/>
+        <input id="searchfilter" type="text" placeholder="Search" ng-model="search"/>
         <ul>
           <li class="nohovereffects">
             <span>
@@ -38,7 +38,7 @@
         </ul>
         <form class="inputpurchase" ng-submit="addEntry()">
           <input type="text" ng-model="entryName" placeholder="Purchase Name" required>
-          <input type="text" ng-model="entryValue" placeholder="$" required pattern="(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)">
+          <input type="text" ng-model="entryValue" placeholder="$" required pattern="(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)" title="Please put in a valid number">
           <input type="submit" value="Add">
         </form>
       </div>

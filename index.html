@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <base href="/walletrak/">
     <link href="stylesheet.css" rel="stylesheet" type="text/css">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,300,400|Open+Sans+Condensed:300|Lato|Montserrat|Source+Sans+Pro:400,700italic|Varela|Poiret One|Roboto:100,300,400,900|Roboto+Slab| Roboto+Condensed' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,300,400|Open+Sans+Condensed:300|Lato|Montserrat|Source+Sans+Pro:400,700italic|Varela|Poiret One|Roboto:100,300,400,900|Roboto+Slab|Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
     <link rel="icon" href="favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 
@@ -14,17 +14,32 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-route.min.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
     <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
-    <script src='https://cdn.firebase.com/v0/firebase-simple-login.js'></script>
     <script src="app.js"></script>
   </head>
   <body>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '905852089492982',
+          xfbml      : true,
+          version    : 'v2.4'
+        });
+      };
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
     <div class="wrapper">
       <header>
         <a href="/walletrak/">walle<span class="greenify">trak</span></a>
         <nav>
           <a href="/walletrak/dashboard" ng-show="uid">dash</a>
-          <!--<a href="/walletrak/about">about</a>-->
           <a href="/walletrak/login" ng-hide="uid">login</a>
+          <a href="/walletrak/account" ng-show="uid">account</a>
           <a href="/walletrak/" ng-show="uid" ng-click="logout()">logout</a>
         </nav>
       </header>
@@ -34,7 +49,29 @@
         <div ng-view>
         </div>
       </div>
-
+      <div class="push"></div>
     </div>
+    <footer>
+      <h1 class="logofont">walle<span class="greenify">trak</span></h1>
+
+      <div class="footercontainer">
+        <div class="contactinfo">
+          <a href="mailto:walletrak@gmail.com">walletrak@gmail.com</a>
+          <a href="tel:503-475-9621">503-475-9621</a>
+        </div>
+        <div class="footerlinks">
+          <a href="/walletrak/about">about</a>
+          <a href="/walletrak/blog">blog</a>
+          <a href="/walletrak/privacy">privacy</a>
+        </div>
+        <div class="socialmedia">
+          <a href="https://www.facebook.com/walletrak" target="_blank"><img src="resources/icons/facebook.svg"/></a>
+          <a href="https://twitter.com/walletrak" target="_blank"><img src="resources/icons/twitter.svg"/></a>
+          <a href="https://github.com/jimmy-jia/walletrak" target="_blank"><img src="resources/icons/github.svg"/></a>
+        </div>
+        
+      </div>
+      
+    </footer>
   </body>
 </html>

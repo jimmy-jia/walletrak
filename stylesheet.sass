@@ -4,12 +4,17 @@ $dark-color: #373837
 
 $main-font: 'Roboto', sans-serif
 $thick-font: 'Montserrat', sans-serif
+$logofont: 'Poiret One', sans-serif
+$sans-font: 'Open Sans', sans-serif
+
+
 *
 	box-sizing: border-box
 body, html
 	margin: 0
 	padding: 0
 	width: 100%
+	height: 100%
 	max-width: 100%
 p
 	font-family: $main-font
@@ -30,9 +35,90 @@ li, ul
 .greenify
 	color: $second-color
 .logofont
-	font-family: 'Poiret One', sans-serif
+	font-family: $logofont
 .nohovereffects
 	pointer-events: none
+.wrapper
+	min-height: 100%
+	margin-bottom: -300px
+.push, footer
+	height: 300px
+	width: 100%
+footer
+	background-color: #373837
+	color: darken(white, 20)
+	position: relative
+	> h1
+		margin: 0
+		text-align: center
+		padding-top: 50px
+		position: relative
+		&:after
+			content: ""
+			width: 80%
+			max-width: 640px
+			margin: 0 auto
+			height: 1px
+			background-color: $second-color
+			position: absolute
+			top: 120px
+			left: 0
+			right: 0
+.footercontainer
+	max-width: 95%
+	width: 620px
+	margin: 0 auto
+	margin-top: 45px
+.contactinfo
+	width: 300px
+	margin-bottom: 13px
+	display: inline-block
+	h1
+		color: #aaa
+		margin: 0
+		padding: 0
+		font-size: 1.5em
+		font-family: $main-font
+		font-weight: 900
+		margin-bottom: 5px
+		text-transform: lowercase
+	a
+		float: left
+		clear: both
+		color: #717171
+		font-weight: 300
+		display: block
+		&:hover
+			color: darken(white, 20)
+.socialmedia
+	display: flex
+	width: 180px
+	a
+		width: 50px
+		height: 50px
+		background-color: darken($second-color, 10)
+		transition: background .4s
+		margin-right: 10px
+		&:hover
+			background-color: darken($second-color, 20)
+		img
+			width: 35px
+			margin-top: 7px
+			margin-left: 7px
+.footerlinks
+	width: 300px
+	display: inline-block
+	position: absolute
+	a
+		font-family: $main-font
+		color: darken(white, 20)
+		font-weight: 100
+		float: right
+		clear: both
+		font-size: 1.3em
+		&:hover
+			color: darken(white, 40)
+	vertical-align: top
 
 header
 	position: fixed
@@ -42,7 +128,7 @@ header
 	padding: 10px
 	font-size: 1.5em
 	> a:first-child
-		font-family: 'Poiret One', sans-serif
+		font-family: $logofont
 		color: white
 		font-weight: bold
 	nav
@@ -50,7 +136,7 @@ header
 		margin-right: 10px
 		a
 			margin-left: 10px
-			font-family: 'Poiret One', sans-serif
+			font-family: $logofont
 			font-weight: bold
 .headerbackcolor
 	position: fixed
@@ -66,13 +152,14 @@ header
 	background-color: #777
 	background-image: url(writing.jpg)
 	background-size: cover
+	background-position: 50% 50%
 	color: white
 	position: relative
 	z-index: 2
 	text-shadow: 0 0 5px $main-color
 	h1
 		font-size: 4em
-		font-family: 'Poiret One', sans-serif
+		font-family: $logofont
 		font-weight: 400
 		margin-bottom: 0
 	h3
@@ -109,10 +196,9 @@ header
 		width: 80px
 
 .appdescription
-	padding-top: 50px
-	padding-bottom: 60px
+	padding: 60px 20px
 	h1
-		font-family: 'Open Sans', sans-serif
+		font-family: $sans-font
 		text-align: center
 		padding-bottom: 40px
 		font-weight: 300
@@ -152,7 +238,7 @@ header
 		width: 100%
 	h1
 		margin: 0
-		font-family: $main-font
+		font-family: $logofont
 		text-transform: lowercase
 		font-weight: 100
 		text-align: center
@@ -160,6 +246,10 @@ header
 	button
 		margin-top: 20px
 		height: 50px
+.loginmessage
+	font-family: $sans-font
+	margin-bottom: 10px
+
 
 input
 	padding: 15px 10px
@@ -188,7 +278,7 @@ input[type="submit"], button
 
 
 .loginmessage
-	font-family: 'Montserrat', sans-serif
+	font-family: $thick-font
 .gotodashboard
 	margin-top: 15px
 	font-size: 1.4em
@@ -227,16 +317,7 @@ input[type="submit"], button
 	width: 900px
 	margin: 0 auto
 	margin-bottom: 60px
-	h1
-		margin: 0
-		font-family: $main-font
-		font-weight: 300
-		text-align: center
-		margin-top: 10px
-		margin-bottom: 5px
-		padding-bottom: 20px
-		border-bottom: 2px solid #e1e1e1
-		color: $dark-color
+	margin-top: 10px
 	ul
 		padding-bottom: 20px
 		.listresults
@@ -287,3 +368,139 @@ input[type="submit"], button
 
 #searchfilter
 	margin-left: 15px
+.tabtitle
+	font-size: 3em
+	display: block
+	margin: 0 auto
+	font-family: $main-font
+	font-weight: 300
+	text-align: center
+	margin-top: 10px
+	margin-bottom: 5px
+	padding-bottom: 20px
+	border-bottom: 2px solid #e1e1e1
+	color: $dark-color
+
+
+
+.accountwrapper
+	position: relative
+	border-radius: 5px
+	padding: 1px 15px 15px 15px
+	background-color: #f1f1f1
+	max-width: 100%
+	width: 600px
+	margin: 0 auto
+	margin-bottom: 60px
+	margin-top: 30px
+	h1
+		margin: 0
+		font-family: $main-font
+		font-weight: 100
+		margin-bottom: 20px
+		margin-top: 20px
+	input
+		display: block
+		width: 250px
+		max-width: 100%
+	button
+		margin-top: 40px
+		height: 40px
+
+
+#analyticscheck
+	position: absolute
+	margin-left: -9999px
+	visibility: hidden
+	& + label
+		display: block
+		position: relative
+		cursor: pointer
+		outline: none
+		user-select: none
+		padding: 2px
+		width: 60px
+		height: 30px
+		background-color: #dddddd
+		border-radius: 30px
+		transition: background .4s
+		margin-bottom: 20px
+	& + label:before, & + label:after
+		display: block
+		position: absolute
+		content: ""
+	& + label:before
+		top: 2px
+		right: 2px
+		bottom: 2px
+		left: 2px
+		background-color: #ffffff
+		border-radius: 30px
+		transition: background .4s
+	& + label:after
+		top: 4px
+		left: 4px
+		bottom: 4px
+		width: 24px
+		background-color: #dddddd
+		border-radius: 50%
+		transition: margin .4s, background-color .4s
+	&:checked + label
+		background-color: $second-color
+	&:checked +label:after
+		margin-left: 28px
+		background-color: $second-color
+
+
+.paypal
+	background-color: #009cde
+	border: 0
+	border-radius: 4px
+	height: 40px
+	line-height: 40px
+	padding: 0 20px
+	text-align: center
+	color: #f9f9f9
+	font-size: 16px
+	span
+		background-repeat: no-repeat
+		background-image: url(resources/paypal.png)
+		height: 22px
+		width: 61px
+		display: inline-block
+		margin: 4px auto 0
+
+
+@media(max-width: 800px)
+	.footercontainer
+		display: flex
+		flex-wrap: wrap
+	.contactinfo
+		padding-left: 15px
+		width: 50%
+	.footerlinks
+		padding-right: 30px
+		display: block
+		width: 50%
+		position: inherit
+		margin-bottom: 20px
+	.socialmedia
+		margin: 0 auto
+	.accountwrapper
+		margin-top: 0
+		margin-bottom: 0
+	.moneytrackerwrapper
+		margin-top: 0
+		margin-bottom: 0
+		*
+			max-width: 100%
+		li
+			span
+				> span
+					width: auto
+					min-width: auto !important
+					max-width: 100%
+					&:first-child
+						
+		.listresults
+			display: block

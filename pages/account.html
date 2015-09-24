@@ -1,0 +1,22 @@
+<div class="accountwrapper">
+	<h1>Settings</h1>
+	<form ng-submit="saveSettings()">
+		<input type="text" ng-model="settings.firstname" placeholder="First Name"/>
+		<input type="text" ng-model="settings.lastname" placeholder="Last Name"/>
+
+		<h1>Payment</h1>
+		<input type="text" ng-model="settings.venmo" placeholder="Venmo Name"/>
+		<input type="text" ng-model="settings.paypal" type="url" placeholder="Paypal.me Link" title="Please input a valid Paypal.me URL"/>
+		<input type="text" ng-model="settings.bitcoin" placeholder="Bitcoin Address"/>
+		<h1>Analytics</h1>
+		
+		<input id="analyticscheck" type="checkbox" ng-model="settings.analytics"/>
+		<label for="analyticscheck"></label>
+
+		<div ng-show="settings.analytics">
+			<input type="text" ng-model="settings.zipcode" placeholder="Zip Code" (\d{5}([\-]\d{4})?) title="Please input a valid USA zip code!"/>
+			<input type="number" ng-model="settings.income" placeholder="Yearly Income"/>
+		</div>
+		<button type="submit">Save Settings</button>
+	</form>
+</div>
